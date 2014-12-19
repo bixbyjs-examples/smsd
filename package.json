@@ -1,0 +1,18 @@
+{
+  "name": "smsd",
+  "description": "Service that sends SMS messages.",
+  "scripts": {
+    "start": "node worker.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bixbyjs-examples/smsd.git"
+  },
+  "dependencies": {
+    "bixby-common": "git://github.com/bixbyjs/bixby-common.git",
+    "bixby-crane": "git://github.com/bixbyjs/bixby-crane.git#feature/bootable",
+    "bootable": "^0.2.4",
+    "crane": "^0.2.0",
+    "electrolyte": "0.0.6"
+  }
+}
