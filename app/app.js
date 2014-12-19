@@ -14,8 +14,8 @@ IoC.use(require('bixby-common'));
 var app = bootable(crane());
 app.phase(bootable.di.initializers(__dirname + '/init'));
 app.phase(bootable.di.routes(__dirname + '/queues'));
-app.phase(IoC.create('adapter'));
 app.phase(IoC.create('boot/dispatch'));
+app.phase(IoC.create('adapter'));
 app.phase(IoC.create('boot/subscribe'));
 
 module.exports = app;
