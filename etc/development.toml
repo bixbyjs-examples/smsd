@@ -2,3 +2,6 @@
 url = "amqp://10.200.0.215:5672"
 exchange = "amq.direct"
 queues = [ "message/sms" ]
+
+[sms]
+gateway = "mock"

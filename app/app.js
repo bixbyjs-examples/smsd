@@ -7,6 +7,7 @@ var IoC = require('electrolyte'),
 
 // Configure IoC container with required components.
 IoC.use('handlers', IoC.node(__dirname + '/handlers'));
+IoC.use(IoC.node(__dirname + '/components'));
 IoC.use(require('bixby-crane'));
 IoC.use(require('bixby-common'));
 

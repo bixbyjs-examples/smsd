@@ -1,9 +1,11 @@
-exports = module.exports = function(logger) {  
+exports = module.exports = function(transmit, logger) {
 
   function send(msg, next) {
-    console.log('send SMS')
-    console.log(msg.body)
-    next();
+    var m = msg.body;
+    transmit(m.to, m.message, function(err) {
+      if (err) { return next(err); }
+      next();
+    });
   }
 
   function acknowledge(msg, next) {
@@ -24,4 +26,4 @@ exports = module.exports = function(logger) {
 /**
  * Component annotations.
  */
-exports['@require'] = [ 'logger' ];
+exports['@require'] = [ 'sms/transmit', 'logger' ];
