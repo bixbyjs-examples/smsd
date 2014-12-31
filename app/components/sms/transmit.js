@@ -11,6 +11,8 @@ exports = module.exports = function(settings) {
   var options = settings.get('sms');
   
   switch (options.gateway) {
+  case 'twilio':
+    return require('./_transmit/twilio')(options);
   case 'mock':
     return require('./_transmit/mock')();
   default:
